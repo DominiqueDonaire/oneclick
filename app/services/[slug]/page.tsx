@@ -2,6 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services } from "@/data/services";
 
+export function generateStaticParams() {
+  return services.map((s) => ({ slug: s.slug }));
+}
+
 export default async function ServiceDetail({
   params,
 }: {
